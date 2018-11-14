@@ -1,0 +1,163 @@
+\documentclass{article}
+
+\usepackage{fancyhdr}
+\usepackage{extramarks}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{tikz}
+\usepackage[plain]{algorithm}
+\usepackage{algpseudocode}
+\usepackage{enumitem}
+\usepackage{multicol}
+\usepackage{amsmath}
+\usepackage[bottom]{footmisc}
+\usepackage{multicol}
+\usepackage{listings}
+% \usepackage[utf8]{inputenc}
+
+% 
+\usetikzlibrary{automata,positioning}
+
+%
+% Basic Document Settings
+%
+
+
+
+
+\topmargin=-0.45in
+    \evensidemargin=0in
+    \oddsidemargin=0in
+    \textwidth=6in
+    \textheight=9.0in
+    \headsep=0.25in
+
+
+\newenvironment{changemargin}[2]{%
+        \setlength{\topsep}{0pt}%
+        \setlength{\leftmargin}{5cm}%
+        \setlength{\rightmargin}{5cm}%
+        \setlength{\listparindent}{\parindent}%
+        \setlength{\itemindent}{\parindent}%
+        \setlength{\parsep}{\parskip}%
+
+}
+
+
+% \linespread{1.1}
+
+\pagestyle{fancy}
+
+%
+% Homework Details
+%   - Title
+%   - Due date
+%   - Class
+%   - Section/Time
+%   - Instructor
+%   - Author
+%
+
+\newcommand{\hmwkTitle}{Project: Part C}
+\newcommand{\hmwkDueDate}{November 16, 2018}
+\newcommand{\hmwkClass}{Database Design and Implementation}
+\newcommand{\hmwkClassTime}{}
+\newcommand{\hmwkClassInstructor}{Professor Zhixiang Chen}
+\newcommand{\hmwkAuthorName}{\textbf{David Caballero, Benjamin Garcia, Tomas Torres}}
+
+%
+% Title Page
+%
+
+\title{
+    \vspace{2in}
+    \textmd{\textbf{\hmwkClass:\ \hmwkTitle}}\\
+    \normalsize\vspace{0.1in}\small{Due\ on\ \hmwkDueDate}\\
+    \vspace{0.1in}\large{\hmwkClassInstructor}
+    \vspace{3in}
+}
+
+\author{\hmwkAuthorName}
+\date{}
+
+\def\changemargin#1#2{\list{}{\rightmargin#2\leftmargin#1}\item[]}
+\let\endchangemargin=\endlist 
+
+% \renewcommand{\part}[1]{\textbf{\large Part \Alph{partCounter}}\stepcounter{partCounter}\\}
+
+% %
+% % Various Helper Commands
+% %
+
+% % Useful for algorithms
+% \newcommand{\alg}[1]{\textsc{\bfseries \footnotesize #1}}
+
+% % For derivatives
+% \newcommand{\deriv}[1]{\frac{\mathrm{d}}{\mathrm{d}x} (#1)}
+
+% % For partial derivatives
+% \newcommand{\pderiv}[2]{\frac{\partial}{\partial #1} (#2)}
+
+% % Integral dx
+% \newcommand{\dx}{\mathrm{d}x}
+
+% % Alias for the Solution section header
+% \newcommand{\solution}{\textbf{\large Solution}}
+
+% % Probability commands: Expectation, Variance, Covariance, Bias
+% \newcommand{\E}{\mathrm{E}}
+% \newcommand{\Var}{\mathrm{Var}}
+% \newcommand{\Cov}{\mathrm{Cov}}
+% \newcommand{\Bias}{\mathrm{Bias}}
+
+\begin{document}
+
+\maketitle
+
+\pagebreak
+
+\tableofcontents
+
+\pagebreak
+
+\begin{changemargin}{2cm}{2cm} 
+
+
+\section{Introduction}
+
+\subsection{Purpose}
+
+This document we will descibe in detail the design of our TourneyDB web-based Data Management system. We will decompose the functionality of this design into interrelated modules that interact with each other through the transferring of data, we will break down these modules to the core tasks we want them to complete and show how they will be implemented as well as how they will interact with eachother.
+
+\subsection{Scope}
+
+This is a preliminary design  for our TourneyDB prototype which will likely be modified if implementation presents any issue.
+
+\subsection{Definitions, Acronyms, and Abbreviations}
+
+\textbf{TourneyDB:} Our web-based software that will aid in the creation, management, and storage of the data relevant to running  a tournament.
+
+
+
+\subsection{References}
+
+Put some references here
+
+
+
+\end{changemargin}
+
+\pagebreak
+
+
+\section{System Overview}
+Our system will provide almost all of the functionality required to handle the data necessary to run a tournament. It will handle user authentication and session management to protect the data created by individuals. It will allow for organizers to create tournaments, and allow guests to view tournaments in their areas, and view local players around them. It will automatically keep track of player performance and generate leaderboards that rank players among each other. It will also provide the functionality to track tournament status in real time.
+
+\section{Decomposition Description}
+    
+The parts that make up our software.
+
+
+
+\end{document}
