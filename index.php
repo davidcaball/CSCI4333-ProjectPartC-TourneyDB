@@ -46,14 +46,14 @@
      <!-- End of navbar -->
 <?php
 //Step2
-$query = "SELECT * FROM event";
+$query = "SELECT event_name, event_start_time, venue_city FROM event, venue";
 mysqli_query($db, $query) or die('Error querying database.');
 
 $result = mysqli_query($db, $query);
 $row = mysqli_fetch_array($result);
 
 while ($row = mysqli_fetch_array($result)) {
- echo $row['event_name'] . ' ' . $row['event_start_time'] .'<br />';
+ echo $row['event_name'] . ' ' . $row['venue_city'] . ' ' .$row['event_start_time'] .'<br />';
 }
 ?>
 
