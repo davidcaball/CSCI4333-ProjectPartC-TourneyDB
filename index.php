@@ -53,7 +53,7 @@ $result = mysqli_query($db, $query);
 $row = mysqli_fetch_array($result);
 
 while ($row = mysqli_fetch_array($result)) {
- echo $row['first_name'] . ' ' . $row['last_name'] . ': ' . $row['email'] . ' ' . $row['city'] .'<br />';
+ hello world
 }
 ?>
 
