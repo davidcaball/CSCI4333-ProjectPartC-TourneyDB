@@ -45,6 +45,12 @@
     </nav>
      <!-- End of navbar -->
 
+     <?php
+      //Step2
+      $query = "SELECT * FROM event";
+      mysqli_query($db, $query) or die('Error querying database.');
+      ?>
+
      <!-- Page Content -->
      <div class="content"> 
       <br /><br /><br />
