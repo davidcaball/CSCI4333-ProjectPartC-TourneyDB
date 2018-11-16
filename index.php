@@ -1,7 +1,7 @@
 <!doctype html>
 <?php
 //Step1
- $db = mysqli_connect('3.16.5.73:3306','root','ChensMyFriend1!','tourneyDB')
+ $db = mysqli_connect('3.16.5.73:3306','root','ChensMyFriend1!','TourneyDB')
  or die('Error connecting to MySQL server.');
 ?>
 
