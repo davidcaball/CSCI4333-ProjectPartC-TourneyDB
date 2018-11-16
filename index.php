@@ -104,24 +104,23 @@ while ($row = mysqli_fetch_array($result)) {
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <th scope="row">The Comeback</th>
-            <td>McAllen, TX</td>
-            <td>5:00PM</td>
-          </tr>
-          <tr>
-            <th scope="row">Smash Extravaganza</th>
-            <td>Harlingen, TX</td>
-            <td>4:00PM</td>
-          </tr>
-          <tr>
-            <th scope="row">Super Smash UTRGV</th>
-            <td>Edinburg, TX</td>
-            <td>5:00PM</td>
-          </tr>
+        <?php
+        //Step2
+        $query = "SELECT event_name, event_start_time, venue_city FROM event, venue";
+        mysqli_query($db, $query) or die('Error querying database.');
+
+        $result = mysqli_query($db, $query);
+        $row = mysqli_fetch_array($result);
+
+        while ($row = mysqli_fetch_array($result)) {
+        echo '<tr>'.'<th scope="row">' . $row['event_name'] . '</th>' . '<td>'. $row['venue_city'] . '</td>' . '<td>' . $row['event_start_time'] . '</td>'.'</tr>';
+         
+        }
+  
+        ?>
         </tbody>
       </table>
-      <!-- End of Leadboard -->
+      <!-- End of Tournament -->
 
       </div>
     <!-- End of page content -->
