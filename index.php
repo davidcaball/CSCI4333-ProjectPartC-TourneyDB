@@ -60,21 +60,19 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <th scope="row">Tim</th>
-            <td>US-South</td>
-            <td>1</td>
-          </tr>
-          <tr>
-              <th scope="row">Mike</th>
-              <td>US-East</td>
-              <td>2</td>
-          </tr>
-          <tr>
-              <th scope="row">Mark</th>
-              <td>Us-South</td>
-              <td>3</td>
-          </tr>
+        <?php
+        //Leadboard query
+        $query = "SELECT player_tag, player_region, team_rank FROM player natural join team";
+        mysqli_query($db, $query) or die('Error querying database.');
+
+        $result = mysqli_query($db, $query);
+        $row = mysqli_fetch_array($result);
+
+        while ($row = mysqli_fetch_array($result)) {
+        echo '<tr>'.'<th scope="row">' . $row['player_tag'] . '</th>' . '<td>'. $row['player_region'] . '</td>' . '<td>' . $row['team_rank'] . '</td>'.'</tr>';
+        }
+  
+        ?>
         </tbody>
       </table>
       <!-- End of Leadboard -->
@@ -93,7 +91,7 @@
         </thead>
         <tbody>
         <?php
-        //Step2
+        //Tournament Query
         $query = "SELECT event_name, event_start_time, venue_city FROM event natural join venue";
         mysqli_query($db, $query) or die('Error querying database.');
 
