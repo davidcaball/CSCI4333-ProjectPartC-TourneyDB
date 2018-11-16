@@ -44,18 +44,17 @@
     </div>
     </nav>
      <!-- End of navbar -->
+     <?php
+//Step2
+$query = "SELECT * FROM tournament";
+mysqli_query($db, $query) or die('Error querying database.');
 
-<?php
-  //Step2
-  $query = "SELECT * FROM event;
-  mysqli_query($db, $query) or die('Error querying database.');
+$result = mysqli_query($db, $query);
+$row = mysqli_fetch_array($result);
 
-  $result = mysqli_query($db, $query);
-  $row = mysqli_fetch_array($result);
-
-  while ($row = mysqli_fetch_array($result)) {
-  echo $row['first_name'] . ' ' . $row['last_name'] . ': ' . $row['email'] . ' ' . $row['city'] .'<br />';
-  }
+while ($row = mysqli_fetch_array($result)) {
+ echo $row['first_name'] . ' ' . $row['last_name'] . ': ' . $row['email'] . ' ' . $row['city'] .'<br />';
+}
 ?>
 
      <!-- Page Content -->
