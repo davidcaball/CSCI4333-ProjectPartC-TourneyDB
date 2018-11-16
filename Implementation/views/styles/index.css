@@ -6,6 +6,15 @@
     width: 100%; /* Full width */
 }
 
+h2 {
+    padding: 10px;
+    border-radius: 15px;
+    margin: auto;
+    max-width: 12%;
+    background-color: purple;
+    text-align: center;
+    color: white !important;
+}
 body, html {
     height: 100%;
 }
@@ -21,5 +30,12 @@ body, html {
     background-position: center;
     background-repeat: repeat;
     background-size: cover;
+}
+
+table{
+    border-radius: 15px;
+    margin:  auto;
+    width: 50% !important; 
+    background-color: white !important;
 }
 
