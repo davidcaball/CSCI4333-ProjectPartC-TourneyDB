@@ -1,4 +1,10 @@
 <!doctype html>
+<?php
+//Step1
+ $db = mysqli_connect('3.16.5.73:3306','root','ChensMyFriend1','tourneyDB')
+ or die('Error connecting to MySQL server.');
+?>
+
 <html lang="en">
   <head>
     <!-- Required meta tags -->
@@ -44,7 +50,6 @@
       <br /><br /><br />
 
       <!-- Leadboard -->
-     
       <table class="table">
           <h2>Leadboard</h2>
         <thead>
@@ -72,7 +77,7 @@
           </tr>
         </tbody>
       </table>
-      <!-- end of leadboard -->
+      <!-- End of Leadboard -->
 
 
       <!-- Tournments-->
@@ -104,11 +109,11 @@
           </tr>
         </tbody>
       </table>
+      <!-- End of Leadboard -->
 
       </div>
-    
-
     <!-- End of page content -->
+
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
