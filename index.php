@@ -94,7 +94,7 @@
         <tbody>
         <?php
         //Step2
-        $query = "SELECT event_name, event_start_time, venue_city FROM event, venue";
+        $query = "SELECT event_name, event_start_time, venue_city FROM event natural join venue";
         mysqli_query($db, $query) or die('Error querying database.');
 
         $result = mysqli_query($db, $query);
