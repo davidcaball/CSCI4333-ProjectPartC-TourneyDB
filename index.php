@@ -62,7 +62,7 @@
         <tbody>
         <?php
         //Leadboard query
-        $query = "SELECT player_tag, player_region, team_rank FROM player natural join team";
+        $query = "SELECT player_tag, player_region, team_rank FROM player, team";
         mysqli_query($db, $query) or die('Error querying database.');
 
         $result = mysqli_query($db, $query);
@@ -92,7 +92,7 @@
         <tbody>
         <?php
         //Tournament Query
-        $query = "SELECT event_name, event_start_time, venue_city FROM event natural join venue";
+        $query = "SELECT event_name, event_start_time, venue_city FROM event, venue";
         mysqli_query($db, $query) or die('Error querying database.');
 
         $result = mysqli_query($db, $query);
