@@ -1,4 +1,10 @@
 <!doctype html>
+<?php
+//Step1
+ $db = mysqli_connect('3.16.5.73:3306','root','ChensMyFriend1!','TourneyDB')
+ or die('Error connecting to MySQL server.');
+?>
+
 <html lang="en">
   <head>
     <!-- Required meta tags -->
@@ -41,8 +47,69 @@
 
      <!-- Page Content -->
      <div class="content"> 
-       
+      <br /><br /><br />
+
+      <!-- Leadboard -->
+      <table class="table">
+          <h2>Leadboard</h2>
+        <thead>
+          <tr>
+            <th scope="col">Player</th>
+            <th scope="col">Region</th>
+            <th scope="col">Rank</th>
+          </tr>
+        </thead>
+        <tbody>
+        <?php
+        //Leadboard query
+        $query = "SELECT player_tag, player_region, team_rank FROM player natural join team";
+        mysqli_query($db, $query) or die('Error querying database.');
+
+        $result = mysqli_query($db, $query);
+        $row = mysqli_fetch_array($result);
+
+        while ($row = mysqli_fetch_array($result)) {
+        echo '<tr>'.'<th scope="row">' . $row['player_tag'] . '</th>' . '<td>'. $row['player_region'] . '</td>' . '<td>' . $row['team_rank'] . '</td>'.'</tr>';
+        }
+  
+        ?>
+        </tbody>
+      </table>
+      <!-- End of Leadboard -->
+
+
+      <!-- Tournments-->
+      <br />
+      <table class="table">
+          <h2>Tournaments</h2>
+        <thead>
+          <tr>
+            <th scope="col">Event</th>
+            <th scope="col">Location</th>
+            <th scope="col">Time</th>
+          </tr>
+        </thead>
+        <tbody>
+        <?php
+        //Tournament Query
+        $query = "SELECT event_name, event_start_time, venue_city FROM event natural join venue";
+        mysqli_query($db, $query) or die('Error querying database.');
+
+        $result = mysqli_query($db, $query);
+        $row = mysqli_fetch_array($result);
+
+        while ($row = mysqli_fetch_array($result)) {
+        echo '<tr>'.'<th scope="row">' . $row['event_name'] . '</th>' . '<td>'. $row['venue_city'] . '</td>' . '<td>' . $row['event_start_time'] . '</td>'.'</tr>';
+         
+        }
+  
+        ?>
+        </tbody>
+      </table>
+      <!-- End of Tournament -->
+
       </div>
+    <!-- End of page content -->
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
